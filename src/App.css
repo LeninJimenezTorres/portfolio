@@ -1,5 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.fondo{
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+}
+
+#anima{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.titulo {
+  color: #001155;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-size: 5em;
+
+}
+
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000ff;
+  display: flex;
+  /* background-image: url(./galery/pic1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
+}
+/* 
+.FondoImagen {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.fondo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
 .App-logo {
@@ -33,6 +84,6 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(1060deg);
   }
-}
+} */
