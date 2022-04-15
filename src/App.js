@@ -8,13 +8,13 @@ function App() {
  
   React.useEffect(() => {
     lottie.loadAnimation({
-      container: document.querySelector("#anima"),
+      container: document.querySelector("#contenedorFondo"),
       animationData: anima
     });
   }, []);
 
   return (
-    <div className='Fondo' id='anima'>
+    <div id='contenedorFondo'>
       <h1 className='titulo'>Comming Soon</h1>
     </div>
       
