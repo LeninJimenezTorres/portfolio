@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import lottie from "lottie-web";
@@ -8,13 +7,14 @@ function App() {
  
   React.useEffect(() => {
     lottie.loadAnimation({
-      container: document.querySelector("#contenedorFondo"),
+      container: document.querySelector("#animation"),
       animationData: anima
+      
     });
   }, []);
 
   return (
-    <div id='contenedorFondo'>
+    <div className='contenedorAnimation' id='animation'>
       <h1 className='titulo'>Comming Soon</h1>
     </div>
       
