@@ -4,6 +4,11 @@ import lottie from "lottie-web";
 import useMouse from '@react-hook/mouse-position'
 import anima from "../src/anima.json";
 import introA from "../src/introA.json";
+import {BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Technologies from "./Components/Technologies";
+import ProfessionalLook from "./Components/ProfessionalLook";
+import Works from "./Components/Works";
+
 
 function App() {
     
@@ -62,27 +67,29 @@ function App() {
     
       
     return (
+    <Router>
         <div className='contenedorAnimation' >
             {/* <div className='circle' ref={cursor}> </div> */}
             <div className='menu'>
                 <ul className='lista'>
-                    <li><a href='#'>Technologies</a></li>
-                    <li><a href='#'>Works</a></li>
-                    <li><a href='#'>Credentials and Certifications</a></li>
-                </ul>
+                    <li><Link to="/Technologies">Technologies</Link></li>
+                    <li><Link to="/Works">Works</Link></li>
+                    <li><Link to="/ProfessionalLook">Professional Look</Link></li>
+                </ul> 
             </div>
             <div id='animation'></div>
             {/* 
             <lottie-player
-                id='animation'
-                src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json"
-              >
+            id='animation'
+            src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json"
+            >
             </lottie-player> 
-        <h1 className='titulo'>Comming Soon</h1>
-        <script crossorigin src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_dvy9mo06.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>
-      */}
+            <h1 className='titulo'>Comming Soon</h1>
+            <script crossorigin src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_dvy9mo06.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>
+        */}
         </div>
+    </Router>
 
     );
 }
