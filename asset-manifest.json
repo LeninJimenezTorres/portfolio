@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.cbf690bc.css",
+    "main.js": "/portfolio/static/js/main.bae82ded.js",
+    "static/media/herobg6.webp": "/portfolio/static/media/herobg6.a5b988aada82e80500db.webp",
+    "static/media/example.webp": "/portfolio/static/media/example.7723ff50a5af08d6de2b.webp",
+    "static/media/ledw.png": "/portfolio/static/media/ledw.52a86f6cbd918b66eca0.png",
+    "static/media/backend.png": "/portfolio/static/media/backend.08c8d93b8142c41a9e63.png",
+    "static/media/mobile.png": "/portfolio/static/media/mobile.15e7b89f1018dcdba6e7.png",
+    "static/media/creator.png": "/portfolio/static/media/creator.f8923ce18390029928ac.png",
+    "static/media/lednb.png": "/portfolio/static/media/lednb.2ec5743fd9e8cfc303a7.png",
+    "static/media/ledb.png": "/portfolio/static/media/ledb.e423588a242de1523da6.png",
+    "static/media/ledc.png": "/portfolio/static/media/ledc.d2086d27c20ce6b07567.png",
+    "static/media/starbucks.png": "/portfolio/static/media/starbucks.c086db5b166ea2f14de1.png",
+    "static/media/github.png": "/portfolio/static/media/github.ed1c06d925fff0b57e32.png",
+    "static/media/web.webp": "/portfolio/static/media/web.dda24cd4811b19ed321d.webp",
+    "index.html": "/portfolio/index.html",
+    "main.cbf690bc.css.map": "/portfolio/static/css/main.cbf690bc.css.map",
+    "main.bae82ded.js.map": "/portfolio/static/js/main.bae82ded.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cbf690bc.css",
+    "static/js/main.bae82ded.js"
+  ]
+}
