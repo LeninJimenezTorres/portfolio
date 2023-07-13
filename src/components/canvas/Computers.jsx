@@ -1,12 +1,22 @@
-import React, {Suspense, useState, useEffect, lazy} from 'react'
+import React, {Suspense, useState, useEffect, lazy, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
+import { useFrame } from 'react-three-fiber';
 
 const Computers = ({isMobile}) => {
   const computer = useGLTF('./boy_with_sky/scene.gltf')
+  
+  const meshRef = useRef();
+  useFrame(() => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y -= 0.001; // Ajusta la velocidad y eje de rotación según tus necesidades
+    }
+  });
+
+  const [desplaza, setdesplaza] = useState(0)
   return (
-    <mesh>
+    <mesh  ref={meshRef}>
       <hemisphereLight intensity={0.9} groundColor="black"/>
       <pointLight intensity={1}/>
       <spotLight position={[-20,50,10]} angle={0.12} penumbra={1} intensity={0.1} castShadow shadow-mapSize={1024}/>
@@ -47,9 +57,11 @@ const ComputersCanvas = () =>{
     };
   },[])
 
+  
+
   return(
     <Canvas
-      frameloop='demand'
+      frameloop='always'
       shadows
       camera={{position:[20,3,5], fov:25}}
       gl={{preserveDrawingBuffer:true}}
