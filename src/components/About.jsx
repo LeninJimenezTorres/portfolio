@@ -68,5 +68,5 @@ const About = () => {
   )
 }
 
-export default SectionWrapped(About)
-//export default About
+//export default SectionWrapped(About)
+export default About
