@@ -16,6 +16,42 @@ export const textVariant = (delay) => {
     };
   };
   
+  export const Bg = (direction, type, delay, duration) => {
+    return {
+      hidden: {
+        opacity: 1,
+        background: 'rgb(120,0,140)',
+        backgroundImage: 'linear-gradient(0deg, rgba(120,0,140,1) 0%, rgba(202,25,192,1) 35%, rgba(0,212,255,1) 100%)'
+      },
+      show: {
+        opacity: 1,
+        background: 'rgb(120,0,140)',
+        backgroundImage: 'linear-gradient(180deg, rgba(120,0,140,1) 0%, rgba(202,25,192,1) 35%, rgba(0,212,255,1) 100%)',
+        transition: {
+          type: type,
+          delay: delay,
+          duration: duration,
+          ease: "easeOut",
+          repeat: Infinity,
+          repeatType: "loop"
+        },
+      },
+      show2: {
+        opacity: 1,
+        background: 'rgb(120,0,140)',
+        backgroundImage: 'linear-gradient(0deg, rgba(120,0,140,1) 0%, rgba(202,25,192,1) 35%, rgba(0,212,255,1) 100%)',
+        transition: {
+          type: type,
+          delay: delay,
+          duration: duration,
+          ease: "easeOut",
+          repeat: Infinity,
+          repeatType: "loop"
+        },
+      },
+  };
+}
+
   export const fadeIn = (direction, type, delay, duration) => {
     return {
       hidden: {

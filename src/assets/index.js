@@ -21,6 +21,30 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.png";
 
+import linux from "./tech/linux.png"
+import after from "./tech/after.png"
+import photoshop from "./tech/photoshop.png"
+import illustrator from "./tech/illustrator.png"
+import premier from "./tech/premier.png"
+import blender from "./tech/blender.png"
+import aws from "./tech/aws.png"
+import androi from "./tech/android.png"
+import csharp from "./tech/csharp.png"
+import effecthouse from "./tech/effecthouse.png"
+import pytho from "./tech/python.png"
+import php from "./tech/php.png"
+import symfony from "./tech/symfony.png"
+import flask from "./tech/flask.png"
+import express from "./tech/express.png"
+import next from "./tech/next.png"
+import gcloud from "./tech/gcloud.png"
+import ios from "./tech/ios.png"
+import swift from "./tech/swift.png"
+import unity from "./tech/unity.png"
+import woo from "./tech/woo.png"
+import wordpress from "./tech/wordpress.png"
+import postman from "./tech/postman.png"
+
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
@@ -59,4 +83,28 @@ export {
   carrent,
   jobit,
   tripguide,
+
+  linux,
+  after,
+  photoshop,
+  illustrator,
+  premier,
+  blender,
+  aws,
+  androi,
+  csharp,
+  effecthouse,
+  pytho,
+  php,
+  symfony,
+  flask,
+  express,
+  next,
+  gcloud,
+  ios,
+  swift,
+  unity,
+  woo,
+  wordpress,
+  postman
 };

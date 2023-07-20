@@ -23,6 +23,30 @@ import {
     jobit,
     tripguide,
     threejs,
+    postman,
+
+    linux,
+    after,
+    photoshop,
+    illustrator,
+    premier,
+    blender,
+    aws,
+    androi,
+    csharp,
+    effecthouse,
+    pytho,
+    php,
+    symfony,
+    flask,
+    express,
+    next,
+    gcloud,
+    ios,
+    swift,
+    unity,
+    woo,
+    wordpress,
   } from "../assets";
   
   export const navLinks = [
@@ -59,6 +83,159 @@ import {
     },
   ];
   
+  const languajes = [
+    {
+      name:"Javascript",
+      icon: javascript,
+    },
+    {
+      name:"Typrescript",
+      icon: typescript,
+    },
+    {
+      name:"Swift",
+      icon: swift,
+    },
+    {
+      name:"Python",
+      icon: pytho,
+    },
+    {
+      name:"Php",
+      icon:php,
+    },
+    {
+      name:"C#",
+      icon: csharp,
+    },
+    {
+      name:"Html",
+      icon: html,
+    },
+    {
+      name:"Css",
+      icon: css,
+    },
+  ];
+
+  const frameworks = [
+    {
+      name:"React",
+      icon: reactjs,
+    },
+    {
+      name:"Express",
+      icon: express,
+    },
+    {
+      name:"Next",
+      icon: next,
+    },
+    {
+      name:"Flask",
+      icon: flask,
+    },
+    {
+      name:"Symfony",
+      icon: symfony,
+    },
+  ];
+
+  const design = [
+    {
+      name:"Blender",
+      icon: blender,
+    },
+    {
+      name:"Figma",
+      icon: figma,
+    },
+    {
+      name:"Photoshop",
+      icon: photoshop,
+    },
+    {
+      name:"Illustrator",
+      icon: illustrator,
+    },
+    {
+      name:"Premier Pro",
+      icon: premier,
+    },
+    {
+      name:"After Effects",
+      icon: after,
+    },
+  ];
+  
+  const servicios = [
+    {
+      name:"AWS",
+      icon: aws,
+    },
+    {
+      name:"Google Cloud",
+      icon: gcloud,
+    },
+    {
+      name:"Docker",
+      icon: docker,
+    },
+    {
+      name:"Git",
+      icon: git,
+    },
+    {
+      name:"Postman",
+      icon: postman,
+    },
+  ];
+  
+  const platforms = [
+    {
+      name:"Unity",
+      icon: unity,
+    },
+    {
+      name:"WordPress",
+      icon: wordpress,
+    },
+    {
+      name:"E-commerce",
+      icon: woo,
+    },
+    {
+      name:"Effect House",
+      icon: effecthouse,
+    },
+  ];
+
+  const libraries = [
+    {
+      name:"Taildwindcss",
+      icon: tailwind,
+    },
+    {
+      name:"Three.JS",
+      icon: threejs,
+    },
+    {
+      name:"Redux",
+      icon: redux,
+    },
+  ];
+
+  const systems = [
+    {
+      name:"Linux",
+      icon: linux,
+    },
+    {
+      name:"iOS",
+      icon: ios,
+    },
+  ];
+
   const technologies = [
     {
       name: "HTML 5",
@@ -262,4 +439,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { services, technologies, experiences, testimonials, projects, languajes, libraries, design, platforms, servicios, frameworks, systems };
