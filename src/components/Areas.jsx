@@ -26,7 +26,7 @@ const ServiceCard=({index,title,icon})=>{
             options={defaultOptions}
         >
             <motion.div
-                variants={fadeIn("right","spring",0.5*index,0.75)}
+                variants={fadeIn("right","spring",0.1*index,1.75)}
                 initial="hidden"
                 whileInView="show"
                 className='w-full p-[1px] rounded-[20px] shodow-card'
@@ -55,9 +55,9 @@ const ServiceCard=({index,title,icon})=>{
                         className='w-full p-[1px] rounded-[20px] shodow-card'
                     >
                         <div
-                            className='bg-tertiary rounded-[20px] py-2 px-10 min-h-[160px] flex justify-evenly items-center flex-col'
+                            className='bg-tertiary rounded-[20px] py-2 px-1 min-h-[70px] flex justify-evenly items-center flex-col'
                         >
-                            <img src={icon} alt={title} className='w-16 h-12 object-contain'/>
+                            <img src={icon} alt={title} className='w-10 h-8 object-contain'/>
                             <h3 className='font-bold text-white text-[17px] font-bold text-center'>
                             {title}
                             </h3>
@@ -83,7 +83,7 @@ function Areas() {
         >
             <h2 className={`${stylesVariable.sectionHeadText} flex pl-10 h-1/2 w-full text-justify` }>Professional areas</h2>
         </motion.div>
-            <div className='w-1/2 flex flex-wrap gap-0 justify-center'>
+            <div className='w-1/2 flex flex-wrap gap-0 justify-center bg-black rounded-[20px] shodow-cardx  '>
             {
                 services.map((service,index)=>(
                 <SectionWrapped component={<ServiceCard key={service.title} index={index} {...service}/>}/>

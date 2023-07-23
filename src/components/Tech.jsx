@@ -41,7 +41,7 @@ const Tech = () => {
                 viewport={{once:true, amount:0.25}}
                 className='justify-center items-center content-center align-middle'
                 >
-                  <div className='w-48 h-48' key={languaje.name}>
+                  <div className='w-32 h-32' key={languaje.name}>
                     <SphereCanvas  icon={languaje.icon} name={languaje.name}/>
                   </div>
               </motion.div>
@@ -69,7 +69,7 @@ const Tech = () => {
                   viewport={{once:true, amount:0.25}}
                   className='justify-center items-center content-center align-middle'
                   >
-                    <div className='w-48 h-48' key={framework.name}>
+                    <div className='w-32 h-32' key={framework.name}>
                       <SphereCanvas  icon={framework.icon} name={framework.name}/>
                     </div>
                 </motion.div>
@@ -98,7 +98,7 @@ const Tech = () => {
                   viewport={{once:true, amount:0.25}}
                   className='justify-center items-center content-center align-middle'
                   >
-                    <div className='w-48 h-48' key={library.name}>
+                    <div className='w-32 h-32' key={library.name}>
                       <SphereCanvas  icon={library.icon} name={library.name}/>
                     </div>
                 </motion.div>
@@ -127,7 +127,7 @@ const Tech = () => {
                   viewport={{once:true, amount:0.25}}
                   className='justify-center items-center content-center align-middle'
                   >
-                    <div className='w-48 h-48' key={servicio.name}>
+                    <div className='w-32 h-32' key={servicio.name}>
                       <SphereCanvas  icon={servicio.icon} name={servicio.name}/>
                     </div>
                 </motion.div>
@@ -156,7 +156,7 @@ const Tech = () => {
                   viewport={{once:true, amount:0.25}}
                   className='justify-center items-center content-center align-middle'
                   >
-                    <div className='w-48 h-48' key={platform.name}>
+                    <div className='w-32 h-32' key={platform.name}>
                       <SphereCanvas  icon={platform.icon} name={platform.name}/>
                     </div>
                 </motion.div>
@@ -185,7 +185,7 @@ const Tech = () => {
                   viewport={{once:true, amount:0.25}}
                   className='justify-center items-center content-center align-middle'
                   >
-                    <div className='w-48 h-48' key={system.name}>
+                    <div className='w-32 h-32' key={system.name}>
                       <SphereCanvas  icon={system.icon} name={system.name}/>
                     </div>
                 </motion.div>
@@ -214,7 +214,7 @@ const Tech = () => {
                   viewport={{once:true, amount:0.25}}
                   className='justify-center items-center content-center align-middle'
                   >
-                    <div className='w-48 h-48' key={item.name}>
+                    <div className='w-32 h-32' key={item.name}>
                       <SphereCanvas  icon={item.icon} name={item.name}/>
                     </div>
                 </motion.div>

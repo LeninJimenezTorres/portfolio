@@ -20,16 +20,18 @@ const SphereIcon = ( props ) => {
 
 
                 <boxGeometry  args={[1,1,1]} />
-                <sphereGeometry  args={[1,1,1]} />
-                */}
-                
                 <sphereGeometry  args={[1,72,72]} />
+            */}
+                
+                <sphereGeometry  args={[1,30,30]} />
                 <meshStandardMaterial
                     color='#9a00ff'
                     //color='#ffffff'
                     polygonOffset
                     polygonOffsetFactor={-5}
                     flatShading
+                    transparent
+                    visible={false}
                 />
                 <Decal
                     position={[0, 0, 0.5]}

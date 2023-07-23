@@ -375,6 +375,70 @@ import {
   
   const projects = [
     {
+      title: "IndomoDesign",
+      url:"https://indomodesign.com",
+      image:"",
+      description: "",
+    },
+    {
+      title: "LedFashion",
+      url:"https://ledfashion-ec.com",
+      image:"",
+      description: "",
+    },
+    {
+      title: "Twitter Video Downloader",
+      url:"https://leninjimeneztorres.github.io/VideoTwitterDownloader/",
+      image:"",
+      description: "",
+    },
+    {
+      title: "Twitter Video Downloader App",
+      url:"https://play.google.com/store/apps/details?id=com.twitterdownloader",
+      image:"",
+      description: "",
+    },
+    {
+      title: "Clinical Laboratory CPI",
+      url:"https://laboratoriocpi.com/",
+      image:"",
+      description: "",
+    },
+    {
+      title: "Are you Fat?",
+      url:"https://leninjimeneztorres.github.io/AreYouFat/",
+      image:"",
+      description: "",
+    },
+    {
+      title: "PokemonApp",
+      url:"https://leninjimeneztorres.github.io/PokemonApp/",
+      image:"",
+      description: "",
+    },
+    {
+      title: "Dog World",
+      url:"https://leninjimeneztorres.github.io/Dog-World/",
+      image:"",
+      description: "",
+    },
+    {
+      title: "Survey template",
+      url:"https://leninjimeneztorres.github.io/Survey-freeCodeCamp-Frontend/",
+      image:"",
+      description: "",
+    },
+    {
+      title: "Gandalf's heart",
+      url:"https://leninjimeneztorres.github.io/GandalfsHeart/",
+      image:"",
+      description: "",
+    },
+    
+  ];
+
+  const projects2 = [
+    {
       name: "Car Rent",
       description:
         "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
