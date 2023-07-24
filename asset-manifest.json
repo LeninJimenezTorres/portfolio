@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.dab0c6d4.css",
-    "main.js": "/portfolio/static/js/main.9eec9867.js",
+    "main.css": "/portfolio/static/css/main.61b5a148.css",
+    "main.js": "/portfolio/static/js/main.4b4aaac1.js",
     "static/media/herobg6.webp": "/portfolio/static/media/herobg6.a5b988aada82e80500db.webp",
     "static/media/example.webp": "/portfolio/static/media/example.7723ff50a5af08d6de2b.webp",
     "static/media/ledw.png": "/portfolio/static/media/ledw.52a86f6cbd918b66eca0.png",
@@ -9,6 +9,7 @@
     "static/media/wordpress.png": "/portfolio/static/media/wordpress.d2cdcea709a8fc42f23a.png",
     "static/media/postman.png": "/portfolio/static/media/postman.73784122f34c69527466.png",
     "static/media/backend.png": "/portfolio/static/media/backend.08c8d93b8142c41a9e63.png",
+    "static/media/cpi.png": "/portfolio/static/media/cpi.9f4a6acbe7394bae404e.png",
     "static/media/mobile.png": "/portfolio/static/media/mobile.15e7b89f1018dcdba6e7.png",
     "static/media/flask.png": "/portfolio/static/media/flask.8d810581a0634ad173cb.png",
     "static/media/creator.png": "/portfolio/static/media/creator.f8923ce18390029928ac.png",
@@ -20,6 +21,7 @@
     "static/media/swift.png": "/portfolio/static/media/swift.d15d5233432fd797f4e5.png",
     "static/media/aws.png": "/portfolio/static/media/aws.52dbfa93d8a6be20f676.png",
     "static/media/csharp.png": "/portfolio/static/media/csharp.868d2314b14591c2e632.png",
+    "static/media/hackmakers.png": "/portfolio/static/media/hackmakers.9331674b58755af4ef5b.png",
     "static/media/express.png": "/portfolio/static/media/express.0d3c4156e9a1d4171100.png",
     "static/media/woo.png": "/portfolio/static/media/woo.82e20d9a57cee7eb2d64.png",
     "static/media/blender.png": "/portfolio/static/media/blender.1a439501badf19439878.png",
@@ -28,16 +30,17 @@
     "static/media/after.png": "/portfolio/static/media/after.aa9c0d901e07b7acf24d.png",
     "static/media/github.png": "/portfolio/static/media/github.ed1c06d925fff0b57e32.png",
     "static/media/gcloud.png": "/portfolio/static/media/gcloud.59d36b8cb82567fdaffc.png",
+    "static/media/ledfashion.png": "/portfolio/static/media/ledfashion.ccc22bb82d5e22b9d2dd.png",
     "static/media/symfony.png": "/portfolio/static/media/symfony.375c4610cf45475615e2.png",
     "static/media/web.webp": "/portfolio/static/media/web.dda24cd4811b19ed321d.webp",
     "static/media/tailwind.png": "/portfolio/static/media/tailwind.3a8d1dafe2392b3003a9.png",
     "static/media/photoshop.png": "/portfolio/static/media/photoshop.96724cf288e7fd077164.png",
     "index.html": "/portfolio/index.html",
-    "main.dab0c6d4.css.map": "/portfolio/static/css/main.dab0c6d4.css.map",
-    "main.9eec9867.js.map": "/portfolio/static/js/main.9eec9867.js.map"
+    "main.61b5a148.css.map": "/portfolio/static/css/main.61b5a148.css.map",
+    "main.4b4aaac1.js.map": "/portfolio/static/js/main.4b4aaac1.js.map"
   },
   "entrypoints": [
-    "static/css/main.dab0c6d4.css",
-    "static/js/main.9eec9867.js"
+    "static/css/main.61b5a148.css",
+    "static/js/main.4b4aaac1.js"
   ]
 }
