@@ -16,7 +16,8 @@ const Tech = () => {
           viewport={{once:true, amount:0.25}}
           className='justify-center items-center content-center align-middle h-full w-full'
       >
-          <h2 className={`${stylesVariable.sectionHeadText} flex pl-10 h-1/2 w-full text-justify` }>Technologies</h2>
+        <p className={`${stylesVariable.sectionSubText} flex pl-10 h-1/2 w-full text-justify `}>What I use to build software solutions</p>
+        <h2 className={`${stylesVariable.sectionHeadText} flex pl-10 h-1/2 w-full text-justify` }>Technologies</h2>
       </motion.div>
       
 

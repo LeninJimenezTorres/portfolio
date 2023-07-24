@@ -8,16 +8,16 @@ import {fadeIn,textVariant} from '../utils/motion.js'
 const About = ({externalRef}) => {
 
   return (
-    <div ref={externalRef} style={{width:"100vw", height:"100vh"}} className='h-full w-full justify-center items-center content-center align-middle mt-10 mb-10 flex flex-col'>
+    <div ref={externalRef} className='h-full w-full justify-center items-center content-center align-middle mt-10 mb-10 flex flex-col'>
       <motion.div 
         variants={textVariant(0.25)} 
         initial="hidden"
         whileInView="show"
         viewport={{once:true, amount:0.25}}
-        className='justify-center items-center content-center align-middle h-1/5 w-full'
+        className='justify-center items-center content-center align-middle h-1/5 w-full pb-0 mb-0'
         >
         <p className={`${stylesVariable.sectionSubText} flex pl-10 h-1/2 w-full text-justify `}>Introduction</p>
-        <h2 className={`${stylesVariable.sectionHeadText} flex pl-10 h-1/2 w-full text-justify` }>Overview</h2>
+        <h2 className={`${stylesVariable.sectionHeadText} flex pl-10 h-1/2 w-full text-justify mb-[-5]` }>Overview</h2>
       </motion.div>
       <motion.div 
         variants={fadeIn("","",0.25,1)}

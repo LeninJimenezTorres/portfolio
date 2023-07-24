@@ -1,5 +1,5 @@
 import './App.css';
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Planet } from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, WorkCanvas, StarsCanvas, Planet } from './components'
 import React, { useRef } from 'react';
 import Areas from './components/Areas';
 function App() {
@@ -16,17 +16,16 @@ function App() {
 
 
   return (
-    <div className="App">
-      <div className="flex flex-col relative z-0 bg-primary">
+    <div className="App overflow-x-hidden">
+      <div className="w-full overflow-x-hidden flex flex-col relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar/> 
           <Hero scrollFunc={scrollToSection}/>
         </div>
         <About externalRef={externalRef}/>
         <Areas/>
         <Tech/>
-        
-        <Works/>
+        <Experience/>
+        <WorkCanvas/>
         
         <div className="relative z-0 w-1/2 ml-10 mb-20 mt-20 flex flex-col w-full">
           <div className='w-full h-full flex justify-center'>
@@ -36,8 +35,8 @@ function App() {
           <StarsCanvas/>
         </div> 
         {/* 
+          <Navbar/> 
         
-        <Experience/>
         <Feedbacks/>
         
         */}

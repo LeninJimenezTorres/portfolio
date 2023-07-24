@@ -81,6 +81,7 @@ function Areas() {
             viewport={{once:true, amount:0.25}}
             className='justify-center items-center content-center align-middle h-full w-full'
         >
+            <p className={`${stylesVariable.sectionSubText} flex pl-10 h-1/2 w-full text-justify `}>What kind of solutions I build </p>
             <h2 className={`${stylesVariable.sectionHeadText} flex pl-10 h-1/2 w-full text-justify` }>Professional areas</h2>
         </motion.div>
             <div className='w-1/2 flex flex-wrap gap-0 justify-center bg-black rounded-[20px] shodow-cardx  '>

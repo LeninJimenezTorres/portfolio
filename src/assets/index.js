@@ -7,6 +7,15 @@ import github from "./github.png";
 import menu from "./menu.png";
 import close from "./close.png";
 
+import cpi from "./company/cpi.png";
+import cendiavia from "./company/cendiavia.png";
+import fiverr from "./company/fiverr.png";
+import freecodecamp from "./company/freecodecamp.jpg";
+import cisco from "./company/cisco.jpg";
+import hackmakers from "./company/hackmakers.png";
+import indomodesign from "./company/indomodesign.png";
+import ledfashion from "./company/ledfashion.png";
+
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -106,5 +115,16 @@ export {
   unity,
   woo,
   wordpress,
-  postman
+  postman,
+
+
+  cpi,
+  cendiavia,
+  fiverr,
+  cisco,
+  freecodecamp,
+  indomodesign,
+  ledfashion,
+  hackmakers,
+
 };
