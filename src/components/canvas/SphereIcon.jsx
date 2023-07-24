@@ -59,7 +59,7 @@ const SphereCanvas = ({icon,name})=>{
                 />
                 <SphereIcon imgUrl={icon} />
             </Suspense>
-            <Preload all/>
+            <Preload all/> 
         </Canvas>
     )
 }

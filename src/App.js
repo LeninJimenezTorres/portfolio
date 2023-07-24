@@ -4,16 +4,54 @@ import React, { useRef } from 'react';
 import Areas from './components/Areas';
 function App() {
   const externalRef = useRef(null);
+  const areasRef = useRef(null);
+  const techRef = useRef(null);
+  const experienceRef = useRef(null);
 
   const scrollToSection = () => {
     if (externalRef.current) {
       window.scrollTo({
-        top: externalRef.current.offsetTop - 100,
+        top: externalRef.current.offsetTop - 0,
+        behavior: 'smooth',
+      });
+    }
+  };
+  
+  const scrollToSection2 = () => {
+    if (areasRef.current) {
+      window.scrollTo({
+        top: areasRef.current.offsetTop - 0,
+        behavior: 'smooth',
+      });
+    }
+  };
+  const scrollToSection3 = () => {
+    if (techRef.current) {
+      window.scrollTo({
+        top: techRef.current.offsetTop - 0,
         behavior: 'smooth',
       });
     }
   };
 
+  const scrollToSection4 = () => {
+    if (experienceRef.current) {
+      window.scrollTo({
+        top: experienceRef.current.offsetTop - 0,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const scrollToSectionAll = (referencia) => {
+    if (referencia.current) {
+      window.scrollTo({
+        top: referencia.current.offsetTop - 100,
+        behavior: 'smooth',
+      });
+    }
+  };
+  
 
   return (
     <div className="App overflow-x-hidden">
@@ -21,10 +59,10 @@ function App() {
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Hero scrollFunc={scrollToSection}/>
         </div>
-        <About externalRef={externalRef}/>
-        <Areas/>
-        <Tech/>
-        <Experience/>
+        <About externalRef={externalRef} scrollFunc={scrollToSection2}/>
+        <Areas areasRef={areasRef} scrollFunc={scrollToSection3}/>
+        <Tech techRef={techRef} scrollFunc={scrollToSection4}/>
+        <Experience experienceRef={experienceRef}/>
         <WorkCanvas/>
         
         <div className="relative z-0 w-1/2 ml-10 mb-20 mt-20 flex flex-col w-full">

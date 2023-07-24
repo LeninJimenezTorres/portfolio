@@ -10,7 +10,7 @@ const Computers = ({isMobile}) => {
   const meshRef = useRef();
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.y -= 0.001; // Ajusta la velocidad y eje de rotación según tus necesidades
+      meshRef.current.rotation.y -= 0.006; // Ajusta la velocidad y eje de rotación según tus necesidades
     }
   });
 

@@ -71,28 +71,47 @@ const ServiceCard=({index,title,icon})=>{
 }
 
 
-function Areas() {
-  return (
-    <div className='flex flex-col h-full w-full justify-center items-center content-center align-middle mt-10 mb-10'>
-        <motion.div 
-            variants={textVariant(0.25)} 
-            initial="hidden"
-            whileInView="show"
-            viewport={{once:true, amount:0.25}}
-            className='justify-center items-center content-center align-middle h-full w-full'
-        >
-            <p className={`${stylesVariable.sectionSubText} flex pl-10 h-1/2 w-full text-justify `}>What kind of solutions I build </p>
-            <h2 className={`${stylesVariable.sectionHeadText} flex pl-10 h-1/2 w-full text-justify` }>Professional areas</h2>
-        </motion.div>
-            <div className='w-1/2 flex flex-wrap gap-0 justify-center bg-black rounded-[20px] shodow-cardx  '>
-            {
-                services.map((service,index)=>(
-                <SectionWrapped component={<ServiceCard key={service.title} index={index} {...service}/>}/>
-                ))
-            }
+function Areas({areasRef, scrollFunc}) {
+    const handleScroll = () => {
+        scrollFunc();
+    };
+
+    return (
+        <div ref={areasRef} className='flex flex-col h-screen w-full justify-center items-center content-center align-middle mt-0 mb-0'>
+            <motion.div 
+                variants={textVariant(0.25)} 
+                initial="hidden"
+                whileInView="show"
+                viewport={{once:true, amount:0.25}}
+                className='justify-center items-center content-center align-middle h-1/5 w-full'
+            >
+                <p className={`${stylesVariable.sectionSubText} pt-10  flex pl-10 h-1/2 w-full text-justify `}>What kind of solutions I build </p>
+                <h2 className={`${stylesVariable.sectionHeadText} flex pl-10 h-1/2 w-full text-justify` }>Professional areas</h2>
+            </motion.div>
+            <div className='w-1/2  h-3/5 flex flex-wrap gap-0 justify-center bg-black rounded-[20px] shodow-cardx  '>
+                {
+                    services.map((service,index)=>(
+                    <SectionWrapped component={<ServiceCard key={service.title} index={index} {...service}/>}/>
+                    ))
+                }
+            </div>
+            <div onClick={handleScroll} className='h-1/5 mb-100 bottom-32 w-full flex justify-center items-center'>
+                <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
+                    <motion.dev 
+                        animate={{
+                        y:[0, 24, 0]
+                        }}
+                        transition={{
+                        duration:1.5,
+                        repeat: Infinity,
+                        repeatType: "loop"
+                        }}
+                        className='w-3 h-3 rounded-full bg-secondary mb-1'
+                    />
+                </div>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Areas
