@@ -1,7 +1,17 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.40ec69f6.css",
-    "main.js": "/portfolio/static/js/main.fc0ed356.js",
+    "main.css": "/portfolio/static/css/main.2e2aa901.css",
+    "main.js": "/portfolio/static/js/main.4b601f1f.js",
+    "static/media/dogworld.png": "/portfolio/static/media/dogworld.0b5a45e864de2146c80e.png",
+    "static/media/twitterdownloader.png": "/portfolio/static/media/twitterdownloader.a5080bd8071ff7eae426.png",
+    "static/media/ledfashion.png": "/portfolio/static/media/ledfashion.ccc22bb82d5e22b9d2dd.png",
+    "static/media/fullindomo.png": "/portfolio/static/media/fullindomo.94668067f025c34a59bc.png",
+    "static/media/cpi.png": "/portfolio/static/media/cpi.9f4a6acbe7394bae404e.png",
+    "static/media/survey.png": "/portfolio/static/media/survey.ceffe1e8472169b652a7.png",
+    "static/media/scol.png": "/portfolio/static/media/scol.3965469d66db238ea5d7.png",
+    "static/media/gandalf.png": "/portfolio/static/media/gandalf.0d5e926a1531eb84048b.png",
+    "static/media/pokemonpedia.png": "/portfolio/static/media/pokemonpedia.e6d47046f6d2a4106ab3.png",
+    "static/media/espe.png": "/portfolio/static/media/espe.23c1e97fd1f5e2f96b2e.png",
     "static/media/herobg6.webp": "/portfolio/static/media/herobg6.a5b988aada82e80500db.webp",
     "static/media/example.webp": "/portfolio/static/media/example.7723ff50a5af08d6de2b.webp",
     "static/media/ledw.png": "/portfolio/static/media/ledw.52a86f6cbd918b66eca0.png",
@@ -9,7 +19,6 @@
     "static/media/wordpress.png": "/portfolio/static/media/wordpress.d2cdcea709a8fc42f23a.png",
     "static/media/postman.png": "/portfolio/static/media/postman.73784122f34c69527466.png",
     "static/media/backend.png": "/portfolio/static/media/backend.08c8d93b8142c41a9e63.png",
-    "static/media/cpi.png": "/portfolio/static/media/cpi.9f4a6acbe7394bae404e.png",
     "static/media/mobile.png": "/portfolio/static/media/mobile.15e7b89f1018dcdba6e7.png",
     "static/media/flask.png": "/portfolio/static/media/flask.8d810581a0634ad173cb.png",
     "static/media/creator.png": "/portfolio/static/media/creator.f8923ce18390029928ac.png",
@@ -30,17 +39,16 @@
     "static/media/after.png": "/portfolio/static/media/after.aa9c0d901e07b7acf24d.png",
     "static/media/github.png": "/portfolio/static/media/github.ed1c06d925fff0b57e32.png",
     "static/media/gcloud.png": "/portfolio/static/media/gcloud.59d36b8cb82567fdaffc.png",
-    "static/media/ledfashion.png": "/portfolio/static/media/ledfashion.ccc22bb82d5e22b9d2dd.png",
     "static/media/symfony.png": "/portfolio/static/media/symfony.375c4610cf45475615e2.png",
     "static/media/web.webp": "/portfolio/static/media/web.dda24cd4811b19ed321d.webp",
     "static/media/tailwind.png": "/portfolio/static/media/tailwind.3a8d1dafe2392b3003a9.png",
     "static/media/photoshop.png": "/portfolio/static/media/photoshop.96724cf288e7fd077164.png",
     "index.html": "/portfolio/index.html",
-    "main.40ec69f6.css.map": "/portfolio/static/css/main.40ec69f6.css.map",
-    "main.fc0ed356.js.map": "/portfolio/static/js/main.fc0ed356.js.map"
+    "main.2e2aa901.css.map": "/portfolio/static/css/main.2e2aa901.css.map",
+    "main.4b601f1f.js.map": "/portfolio/static/js/main.4b601f1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.40ec69f6.css",
-    "static/js/main.fc0ed356.js"
+    "static/css/main.2e2aa901.css",
+    "static/js/main.4b601f1f.js"
   ]
 }
