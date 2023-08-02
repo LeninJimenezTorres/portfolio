@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import About from './About';
 import Tech from './Tech';
 import Experience from './Experience';
-import WorkCanvas from './Works';
+import WorkCanvas from './WorkCanvas';
 import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Planet from './Planet';

@@ -1,5 +1,5 @@
 import './App.css';
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, WorkCanvas, StarsCanvas, Planet } from './components'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, WorkCanvas, StarsCanvas, Planet, Credentials } from './components'
 import React, { useRef } from 'react';
 import Areas from './components/Areas';
 function App() {
@@ -64,6 +64,7 @@ function App() {
         <Tech techRef={techRef} scrollFunc={scrollToSection4}/>
         <Experience experienceRef={experienceRef}/>
         <WorkCanvas/>
+        <Credentials/>
         
         <div className="relative z-0 w-1/2 ml-10 mb-20 mt-20 flex flex-col w-full">
           <div className='w-full h-full flex justify-center'>

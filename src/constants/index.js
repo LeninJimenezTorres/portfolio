@@ -56,6 +56,18 @@ import {
     unity,
     woo,
     wordpress,
+
+    cpifull,
+    dogwolrd,
+    gandalf,
+    fullindomo,
+    pokemonpedia,
+    ledfashionfull,
+    scol,
+    survey,
+    twitterdownloader,
+    espe,
+    oci,
   } from "../assets";
   
   export const navLinks = [
@@ -389,51 +401,51 @@ import {
     {
       title: "IndomoDesign",
       url:"https://indomodesign.com",
-      image:"",
+      image:fullindomo,
       description: "",
     },
     {
       title: "LedFashion",
       url:"https://ledfashion-ec.com",
-      image:"",
+      image:ledfashionfull,
       description: "",
     },
     {
       title: "Twitter Video Downloader",
       url:"https://leninjimeneztorres.github.io/VideoTwitterDownloader/",
-      image:"",
+      image:twitterdownloader,
       description: "",
     },
     
     {
       title: "Clinical Laboratory CPI",
       url:"https://laboratoriocpi.com/",
-      image:"",
+      image:cpifull,
       description: "",
     },
     
     {
       title: "PokemonApp",
       url:"https://leninjimeneztorres.github.io/PokemonApp/",
-      image:"",
+      image:pokemonpedia,
       description: "",
     },
     {
       title: "Dog World",
       url:"https://leninjimeneztorres.github.io/Dog-World/",
-      image:"",
+      image:dogwolrd,
       description: "",
     },
     {
       title: "Survey template",
       url:"https://leninjimeneztorres.github.io/Survey-freeCodeCamp-Frontend/",
-      image:"",
+      image:survey,
       description: "",
     },
     {
       title: "Gandalf's heart",
       url:"https://leninjimeneztorres.github.io/GandalfsHeart/",
-      image:"",
+      image:gandalf,
       description: "",
     },
     
@@ -504,5 +516,54 @@ import {
       source_code_link: "https://github.com/",
     },
   ];
+
+    
+  const credentials = [
+    {
+      title: "Mechatronic Engineer",
+      url:"https://leninjimeneztorres.github.io/credentials/#/engineering",
+      image: espe,
+      description: "",
+    },
+    {
+      title: "JavaScript Algorithms and Data Structures - freeCodeCamp",
+      url:"https://www.freecodecamp.org/certification/lenin_jimenez/javascript-algorithms-and-data-structures",
+      image:freecodecamp,
+      description: "",
+    },
+    {
+      title: "Hackmakers #FormulaAI Hack 2022: Honorable Mentions Certificate",
+      url:"https://au.badgr.com/public/assertions/tbLk44dBQ_GTwRo1KRsNBQ",
+      image:hackmakers,
+      description: "",
+    },
+    
+    {
+      title: "Hackmakers #FormulaAI Hack 2022: Participant Certificate",
+      url:"https://au.badgr.com/public/assertions/GdlyHo6MT0aKNYi_XLGHIg",
+      image:hackmakers,
+      description: "",
+    },
+    
+    {
+      title: "OCI Foundations 2021 Associate [1Z0-1085-21] - Oracle",
+      url:"https://catalog-education.oracle.com/pls/certview/sharebadge?id=57DA537F51BFDC25313319B550020AE6EB1690C8598101BCDB9411E030DE686A",
+      image:oci,
+      description: "",
+    },
+    {
+      title: "Responsive Web Design - freeCodeCamp",
+      url:"https://www.freecodecamp.org/certification/lenin_jimenez/responsive-web-design",
+      image:freecodecamp,
+      description: "",
+    },
+    {
+      title: "Cisco Certified Network Associate - CCNA - Cisco",
+      url:"https://www.credly.com/badges/3853b4bc-3d93-4daf-aa81-fafe6e164b44",
+      image:cisco,
+      description: "",
+    },
+  ];
+
   
-  export { services, technologies, experiences, testimonials, projects, languajes, libraries, design, platforms, servicios, frameworks, systems };
+  export { services, technologies, experiences, testimonials, projects, languajes, libraries, design, platforms, servicios, frameworks, systems, credentials };

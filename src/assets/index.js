@@ -15,6 +15,18 @@ import cisco from "./company/cisco.jpg";
 import hackmakers from "./company/hackmakers.png";
 import indomodesign from "./company/indomodesign.png";
 import ledfashion from "./company/ledfashion.png";
+import espe from "./company/espe.png";
+import oci from "./company/oci.jpg";
+
+import cpifull from "./projects/cpi.png";
+import dogwolrd from "./projects/dogworld.png";
+import gandalf from "./projects/gandalf.png";
+import fullindomo from "./projects/fullindomo.png";
+import ledfashionfull from "./projects/ledfashion.png";
+import pokemonpedia from "./projects/pokemonpedia.png";
+import scol from "./projects/scol.png";
+import survey from "./projects/survey.png";
+import twitterdownloader from "./projects/twitterdownloader.png";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -62,6 +74,7 @@ import tesla from "./company/tesla.png";
 import carrent from "./example.webp";
 import jobit from "./example.webp";
 import tripguide from "./example.webp";
+
 
 export {
   ledw,
@@ -127,4 +140,16 @@ export {
   ledfashion,
   hackmakers,
 
+  cpifull,
+  dogwolrd,
+  gandalf,
+  fullindomo,
+  ledfashionfull,
+  pokemonpedia,
+  scol,
+  survey,
+  twitterdownloader,
+  espe,
+  oci,
+  
 };
