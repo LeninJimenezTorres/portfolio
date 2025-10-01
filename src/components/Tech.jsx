@@ -1,13 +1,8 @@
 import React, {useRef, Suspense} from 'react'
 import { technologies, languajes, libraries, design, platforms, servicios, frameworks, systems } from '../constants'
-import { SectionWrapped } from '../hoc'
-import {SphereCanvas} from './canvas/SphereIcon'
 import { motion, AnimatePresence } from 'framer-motion'
 import { textVariant, fadeIn } from '../utils/motion'
 import { stylesVariable } from '../menustyles'
-import CanvasLoader from './Loader'
-
-//import { Carousel } from '@trendyol-js/react-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -38,7 +33,6 @@ const TechCanvas =  ({datos,etiqueta})=>{
               className='justify-center items-center content-center align-middle'
               >
                 <div className='w-32 h-32' key={item.name}>
-                  <SphereCanvas  icon={item.icon} name={item.name}/>
                 </div>
             </motion.div>
           ))

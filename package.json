@@ -1,5 +1,5 @@
 {
-  "homepage":"https://LeninJimenezTorres.github.io/portfolio",
+  "homepage": "https://LeninJimenezTorres.github.io/portfolio",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +14,7 @@
     "@types/three": "^0.154.0",
     "framer-motion": "^10.12.18",
     "framer-motion-3d": "^10.13.0",
+    "gsap": "^3.13.0",
     "jotai": "^2.2.2",
     "maath": "^0.7.0",
     "react": "^18.2.0",
