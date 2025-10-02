@@ -7,11 +7,14 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollToPlugin);
 
+const DISPLAY_HEIGHT = window.innerHeight;
+
 function App() {
   const externalRef = useRef(null);
   const areasRef = useRef(null);
   const techRef = useRef(null);
   const experienceRef = useRef(null);
+  const topRef = useRef(null);
 
     const scrollToSectionGSAP = (ref, duration = 4, offset = 0) => {
         if (ref.current) {
@@ -20,6 +23,16 @@ function App() {
                 scrollTo: {
                     y: ref.current.offsetTop - offset,
                 },
+                ease: "power3.inOut"
+            });
+        }
+    };
+
+    const scrollDown = (ref, duration = 4, yValue = 0) => {
+        if (ref.current) {
+            gsap.to(ref.current, { // <-- El objetivo es el elemento (ref.current), NO 'window'
+                duration: duration,
+                y: `+=${yValue}`, // <-- Usamos 'y' (alias de GSAP para translateY) con valor relativo
                 ease: "power3.inOut"
             });
         }
@@ -62,11 +75,15 @@ function App() {
   
 
   return (
-    <div className="App overflow-x-hidden">
-      <div className="w-full overflow-x-hidden flex flex-col relative z-0 bg-primary">
-        <div className="bg-white bg-cover bg-no-repeat bg-center">
-            <Hero scrollFunc={() => scrollToSectionGSAP(externalRef, 4, 0)}/>
+    <div className="App overflow-x-hidden overflow-hidden" style={{
+        overflow: 'hidden',
+        flex: 1,
+        width: '100%',
+    }}>
+        <div className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: 99}} ref={topRef}>
+            <Hero scrollFunc={() => scrollDown(topRef, 4, DISPLAY_HEIGHT)}/>
         </div>
+      <div className="overflow-hidden flex flex-col relative z-0 bg-primary">
         <About externalRef={externalRef} scrollFunc={scrollToSection2}/>
         <Areas areasRef={areasRef} scrollFunc={scrollToSection3}/>
         <Tech techRef={techRef} scrollFunc={scrollToSection4}/>
