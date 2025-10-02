@@ -30,9 +30,9 @@ function App() {
 
     const scrollDown = (ref, duration = 4, yValue = 0) => {
         if (ref.current) {
-            gsap.to(ref.current, { // <-- El objetivo es el elemento (ref.current), NO 'window'
+            gsap.to(ref.current, {
                 duration: duration,
-                y: `+=${yValue}`, // <-- Usamos 'y' (alias de GSAP para translateY) con valor relativo
+                y: `+=${yValue}`,
                 ease: "power3.inOut"
             });
         }
