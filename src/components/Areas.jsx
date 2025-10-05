@@ -70,7 +70,6 @@ const ServiceCard=({index,title,icon})=>{
     )
 }
 
-
 function Areas({areasRef, scrollFunc}) {
     const handleScroll = () => {
         scrollFunc();
