@@ -59,7 +59,7 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
   return (
     <div ref={externalRef} className='h-screen w-full justify-center items-center content-center align-middle mt-0 mb-0 flex flex-col' style={{background:'black'}}>
       <div ref={externalRef} className='w-full justify-center items-center content-center align-middle mt-0 mb-0 flex flex-row' style={{height:'90%'}}>
-        <div onClick={handleScroll} className='mb-100 bottom-0 justify-center items-center flex z-20' style={{width: '5%', height: '100vh', visibility: contentIsHidden ? 'hidden' : 'visible'}}>
+        <div onClick={handleScroll} className='mb-100 bottom-0 justify-center items-center flex absolute z-20 left-0' style={{width: '10%', height: '100vh', visibility: contentIsHidden ? 'hidden' : 'visible'}}>
           <div className='w-[25px] h-[25px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
             <motion.dev
               animate={{
@@ -80,15 +80,15 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
             muted
             autoPlay
             loop={videoShouldLoop}
-            className="inset-0 w-[100%] h-[100%] object-contain z-[10]"
+            className="inset-0 w-[100%] h-[100%] object-contain absolute z-10"
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>
         </div>
         <motion.div
-          className='flex items-center justify-center flex-col'
+          className='flex items-center justify-center flex-col absolute z-20'
           animate={{
-            width: contentIsHidden ? '0%' : '55%',
+            width: contentIsHidden ? '0%' : '90%',
             opacity: contentIsHidden ? 0 : 1,
           }}
           transition={{ duration: 1.2, ease: 'easeInOut' }}
@@ -115,8 +115,8 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
                 hidden: {opacity: 0, y: 20},
                 visible: {opacity: 1, y: 0, transition: {duration: 1.0, ease: 'easeOut'}},
               }}
-              className={`${stylesVariable.sectionHeadText} pt-10 pl-10 flex h-auto w-[100%] text-justify font-mono`}
-              style={{background: 'transparent'}}
+              className={`${stylesVariable.sectionHeadText} pt-10 pl-10 flex w-[100%] text-justify font-mono`}
+              style={{background: 'transparent', flex: 0.3}}
             >
               Web Development
             </motion.h2>}
@@ -127,7 +127,7 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
                 visible: {opacity: 1, y: 0, transition: {duration: 1.7, ease: 'easeOut'}},
               }}
               className={`${stylesVariable.sectionSubText} pt-10 flex pl-10 h-auto w-full text-justify`}
-              style={{background: 'transparent'}}
+              style={{background: 'transparent', flex: 0.3}}
             >
               Modern Web Applications
             </motion.p>}
@@ -138,7 +138,7 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
                 visible: {opacity: 1, y: 0, transition: {duration: 2.4, ease: 'easeOut'}},
               }}
               className='flex pl-10 m-10 text-justify text-[17px] leading-10'
-              style={{width: '80%'}}
+              style={{width: '80%', flex: 0.3}}
             >
               Build your website using the best solution for your needs. Whether you want a landing page, an e-commerce site, your professional portfolio, or your web app.
             </motion.p>}
