@@ -1,17 +1,22 @@
-// src/context/AnimationContext.jsx
 import React, { createContext, useState, useContext } from 'react';
 
-// 1. Crear el Contexto
 const AnimationContext = createContext(undefined);
 
-// 2. Crear el Provider
 export const AnimationProvider = ({ children }) => {
-  // Estado para la posición Y de Hero (o cualquier otro valor)
   const [heroYPosition, setHeroYPosition] = useState(0);
+  const [introYPosition, setIntroYPosition] = useState(0);
+  const [showWebSection, setShowWebSection] = useState(false);
+  const [showMobSection, setShowMobSection] = useState(false);
   
   const value = {
     heroYPosition,
     setHeroYPosition,
+    introYPosition,
+    setIntroYPosition,
+    showWebSection,
+    setShowWebSection,
+    showMobSection,
+    setShowMobSection,
   };
   
   return (
@@ -21,10 +26,8 @@ export const AnimationProvider = ({ children }) => {
   );
 };
 
-// 3. Hook personalizado para fácil consumo
 export const useAnimationContext = () => {
   return useContext(AnimationContext);
 };
 
-// Exportar el Provider para usarlo en App.js
 export default AnimationContext;

@@ -1,9 +1,13 @@
-import React, { useRef } from 'react';
+import React, {useRef, useState} from 'react';
 import { motion } from 'framer-motion'
 import { stylesVariable } from '../menustyles'
 
 const Hero = ({scrollFunc }) => {
+  const [clickedOnce, setClickedOnce] = useState(false);
+  
   const handleScroll = () => {
+    if (clickedOnce) return;
+    setClickedOnce(true);
     scrollFunc();
   };
 

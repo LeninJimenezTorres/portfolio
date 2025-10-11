@@ -1,6 +1,6 @@
 import Hero from './Hero';
 import Navbar from './Navbar';
-import About from './About';
+import MobileDevelopmentSection from './MobileDevelopmentSection';
 import Tech from './Tech';
 import Experience from './Experience';
 import WorkCanvas from './WorkCanvas';
@@ -10,7 +10,7 @@ import Credentials from './Credentials';
 export {
   Hero,
   Navbar,
-  About,
+  MobileDevelopmentSection,
   Tech,
   Experience,
   WorkCanvas,

@@ -1,10 +1,20 @@
 import './App.css';
-import {About, Contact, Experience, Hero, Tech, WorkCanvas, Credentials } from './components'
+import {MobileDevelopmentSection, Contact, Hero } from './components'
 import Areas from './components/Areas';
 import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import {useAnimationContext} from "./context/AnimationContext";
+import WebDevelopmentSection from "./components/WebDevelopmentSection";
+import {
+  Z_INDEX_MOB_SECTION,
+  Z_INDEX_HERO,
+  Z_INDEX_WEB_SECTION,
+  Z_INDEX_INTRO,
+  Z_INDEX_BASE
+} from "./constants/zIndexComponents";
+import Intro from "./components/Intro";
+import {DISPLAY_WIDTH} from "./constants/Metrics";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -14,10 +24,14 @@ function AppContent() {
   const externalRef = useRef(null);
   const areasRef = useRef(null);
   const techRef = useRef(null);
-  const experienceRef = useRef(null);
   const topRef = useRef(null);
+  const upRef = useRef(null);
+  
+  const mobileDevRef = useRef(null);
+  const webDevRef = useRef(null);
   
   const { setHeroYPosition } = useAnimationContext();
+  const { setIntroYPosition } = useAnimationContext();
   
   const scrollDown = (ref, duration = 4, yValue = 0) => {
     if (ref.current) {
@@ -33,13 +47,40 @@ function AppContent() {
     }
   };
   
-  const scrollToSection2 = () => {
-    if (areasRef.current) {
-      window.scrollTo({
-        top: areasRef.current.offsetTop - 0,
-        behavior: 'smooth',
+  const scrollUp = (ref, duration = 4, yValue = 0) => {
+    if (ref.current) {
+      gsap.to(ref.current, {
+        duration: duration,
+        y: `-=${yValue}`,
+        ease: "power3.inOut",
+        onUpdate: () => {
+          const currentY = gsap.getProperty(ref.current, 'y');
+          setIntroYPosition(currentY);
+        },
       });
     }
+  };
+  
+  const moveToWebDevSection = (showComponentRef, hideComponentRef) => {
+    const tl = gsap.timeline();
+    
+    tl.fromTo(showComponentRef.current, {
+      opacity: 0,
+      zIndex: Z_INDEX_WEB_SECTION
+    }, {
+      opacity: 1,
+      duration: 2.5,
+      ease: "power2.inOut"
+    }, 0);
+    
+    tl.to(hideComponentRef.current, {
+      opacity: 0,
+      duration: 2.5,
+      ease: "power2.inOut",
+      onComplete: () => {
+        gsap.set(hideComponentRef.current, { zIndex: 0 });
+      }
+    }, 0);
   };
   
   const scrollToSection3 = () => {
@@ -51,31 +92,35 @@ function AppContent() {
     }
   };
   
-  const scrollToSection4 = () => {
-    if (experienceRef.current) {
-      window.scrollTo({
-        top: experienceRef.current.offsetTop - 0,
-        behavior: 'smooth',
-      });
-    }
-  };
-  
   return (
     <div className="App overflow-x-hidden overflow-hidden" style={{
       overflow: 'hidden',
       flex: 1,
       width: '100%',
     }}>
-      <div className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: 99}} ref={topRef}>
+      <div className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_HERO}} ref={topRef}>
         <Hero scrollFunc={() => scrollDown(topRef, 4, DISPLAY_HEIGHT)}/>
       </div>
+      <div className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_INTRO}} ref={upRef}>
+        <Intro scrollFunc={() => scrollUp(upRef, 4, DISPLAY_HEIGHT)}/>
+      </div>
+      <div ref={mobileDevRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_MOB_SECTION}}>
+        <MobileDevelopmentSection externalRef={externalRef} scrollFunc={() => {
+          moveToWebDevSection(webDevRef, mobileDevRef)
+        }}/>
+      </div>
+      <div ref={webDevRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_WEB_SECTION}}>
+        <WebDevelopmentSection externalRef={externalRef} scrollFunc={() => {
+          moveToWebDevSection(mobileDevRef, webDevRef)
+        }}/>
+      </div>
+      <div className="w-screen h-screen bg-black" style={{zIndex: Z_INDEX_BASE, position: "absolute", width: DISPLAY_WIDTH, height: DISPLAY_HEIGHT}}></div>
       <div className="overflow-hidden flex flex-col relative z-0 bg-primary">
-        <About externalRef={externalRef} scrollFunc={scrollToSection2}/>
         <Areas areasRef={areasRef} scrollFunc={scrollToSection3}/>
-        <Tech techRef={techRef} scrollFunc={scrollToSection4}/>
-        <Experience experienceRef={experienceRef}/>
-        <WorkCanvas/>
-        <Credentials/>
+        {/*<Tech techRef={techRef} scrollFunc={scrollToSection4}/>*/}
+        {/*<Experience experienceRef={experienceRef}/>*/}
+        {/*<WorkCanvas/>*/}
+        {/*<Credentials/>*/}
         
         <div className="relative z-0 w-1/2 ml-10 mb-20 mt-20 flex flex-col w-full">
           <div className='w-full h-full flex justify-center'>
