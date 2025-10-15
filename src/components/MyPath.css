@@ -1,0 +1,99 @@
+/* Contenedor Principal */
+.my-path-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor de la Línea de Tiempo */
+.path-timeline {
+    position: relative;
+    padding-left: 50px; /* Espacio para la línea vertical */
+}
+
+/* El NODO (Punto de la línea de tiempo + Tarjeta) */
+.path-node {
+    position: relative;
+    padding-bottom: 40px; /* Espacio entre cada puesto */
+}
+
+/* El Círculo/Punto (El Bullet) */
+.path-bullet {
+    position: absolute;
+    left: -35px; /* Posiciona el círculo en el margen */
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #007bff; /* Color del punto */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 10; /* Asegura que esté por encima de la línea */
+    box-shadow: 0 0 0 4px #cce5ff; /* Un pequeño halo */
+}
+
+.bullet-content {
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* La Línea de Conexión Vertical */
+.path-connector {
+    position: absolute;
+    left: -20px; /* Alinea con el centro del bullet */
+    top: 30px; /* Empieza debajo del bullet */
+    bottom: 0;
+    width: 2px;
+    background-color: #ccc; /* Color de la línea */
+    z-index: 5; /* Detrás del bullet y la tarjeta */
+}
+
+/* La Tarjeta de Información del Puesto */
+.path-card {
+    background: #f9f9f9;
+    border-left: 4px solid #007bff;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.path-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.role-name {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.company-name {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.job-date {
+    font-size: 0.85em;
+    color: #888;
+    white-space: nowrap; /* Evita que la fecha se rompa */
+}
+
+.job-description {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}

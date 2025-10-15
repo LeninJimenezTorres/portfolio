@@ -6,7 +6,7 @@ import backgroundVideo from '../assets/web_intro.mp4';
 import {useAnimationContext} from "../context/AnimationContext";
 
 const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
-  const { showWebSection } = useAnimationContext();
+  const { showWebSection, setShowPathSection } = useAnimationContext();
   const [showText, setShowText] = useState(false)
   const [videoShouldLoop, setVideoShouldLoop] = useState(false)
   const [clickedOnce, setClickedOnce] = useState(false);
@@ -57,9 +57,9 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
   }, [showWebSection]);
   
   return (
-    <div ref={externalRef} className='h-screen w-full justify-center items-center content-center align-middle mt-0 mb-0 flex flex-col' style={{background:'black'}}>
-      <div ref={externalRef} className='w-full justify-center items-center content-center align-middle mt-0 mb-0 flex flex-row' style={{height:'90%'}}>
-        <div onClick={handleScroll} className='mb-100 bottom-0 justify-center items-center flex absolute z-20 left-0' style={{width: '10%', height: '100vh', visibility: contentIsHidden ? 'hidden' : 'visible'}}>
+    <div ref={externalRef} className='h-screen w-full justify-center items-center content-center align-middle mt-0 mb-0 flex flex-col  overflow-hidden' style={{background:'black'}}>
+      <div ref={externalRef} className='w-full justify-center items-center content-center align-middle mt-0 mb-0 flex flex-row overflow-hidden'  style={{height:'90%'}}>
+        <div onClick={handleScroll} className='mb-100 bottom-0 justify-center items-center flex absolute z-20 left-0 overflow-hidden' style={{width: '10vw', height: '100vh', visibility: contentIsHidden ? 'hidden' : 'visible'}}>
           <div className='w-[25px] h-[25px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
             <motion.dev
               animate={{
@@ -86,9 +86,9 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
           </video>
         </div>
         <motion.div
-          className='flex items-center justify-center flex-col absolute z-20'
+          className='flex items-center justify-center flex-col absolute z-20  left-[10%]'
           animate={{
-            width: contentIsHidden ? '0%' : '90%',
+            width: contentIsHidden ? '0%' : '90vw',
             opacity: contentIsHidden ? 0 : 1,
           }}
           transition={{ duration: 1.2, ease: 'easeInOut' }}
@@ -96,7 +96,7 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
         >
           <motion.div
             className='flex items-center justify-center flex-col'
-            style={{ width: '100%', height: '90%' }}
+            style={{ width: '100%', height: '80%' }}
             initial="hidden"
             animate={contentIsHidden ? "hidden" : "visible"}
             variants={{
@@ -137,7 +137,7 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
                 hidden: {opacity: 0, y: 20},
                 visible: {opacity: 1, y: 0, transition: {duration: 2.4, ease: 'easeOut'}},
               }}
-              className='flex pl-10 m-10 text-justify text-[17px] leading-10'
+              className='flex pl-10 m-10 text-right items-center text-[17px] leading-10'
               style={{width: '80%', flex: 0.3}}
             >
               Build your website using the best solution for your needs. Whether you want a landing page, an e-commerce site, your professional portfolio, or your web app.

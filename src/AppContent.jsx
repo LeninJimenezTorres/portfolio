@@ -11,10 +11,11 @@ import {
   Z_INDEX_HERO,
   Z_INDEX_WEB_SECTION,
   Z_INDEX_INTRO,
-  Z_INDEX_BASE
+  Z_INDEX_BASE, Z_INDEX_MY_PATH
 } from "./constants/zIndexComponents";
 import Intro from "./components/Intro";
 import {DISPLAY_WIDTH} from "./constants/Metrics";
+import MyPath from "./components/MyPath";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -29,6 +30,7 @@ function AppContent() {
   
   const mobileDevRef = useRef(null);
   const webDevRef = useRef(null);
+  const myPathRef = useRef(null);
   
   const { setHeroYPosition } = useAnimationContext();
   const { setIntroYPosition } = useAnimationContext();
@@ -114,21 +116,10 @@ function AppContent() {
           moveToWebDevSection(mobileDevRef, webDevRef)
         }}/>
       </div>
-      <div className="w-screen h-screen bg-black" style={{zIndex: Z_INDEX_BASE, position: "absolute", width: DISPLAY_WIDTH, height: DISPLAY_HEIGHT}}></div>
-      <div className="overflow-hidden flex flex-col relative z-0 bg-primary">
-        <Areas areasRef={areasRef} scrollFunc={scrollToSection3}/>
-        {/*<Tech techRef={techRef} scrollFunc={scrollToSection4}/>*/}
-        {/*<Experience experienceRef={experienceRef}/>*/}
-        {/*<WorkCanvas/>*/}
-        {/*<Credentials/>*/}
-        
-        <div className="relative z-0 w-1/2 ml-10 mb-20 mt-20 flex flex-col w-full">
-          <div className='w-full h-full flex justify-center'>
-            <Contact/>
-          </div>
-        </div>
+      <div ref={myPathRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_MY_PATH, top: DISPLAY_HEIGHT}}>
+        <MyPath scrollFunc={() => scrollUp(upRef, 4, DISPLAY_HEIGHT)}/>
       </div>
-    
+      <div className="w-screen h-screen bg-black" style={{zIndex: Z_INDEX_BASE, position: "absolute", width: DISPLAY_WIDTH, height: DISPLAY_HEIGHT}}></div>
     </div>
   );
 }

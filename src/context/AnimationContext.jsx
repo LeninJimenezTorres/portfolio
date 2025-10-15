@@ -7,6 +7,7 @@ export const AnimationProvider = ({ children }) => {
   const [introYPosition, setIntroYPosition] = useState(0);
   const [showWebSection, setShowWebSection] = useState(false);
   const [showMobSection, setShowMobSection] = useState(false);
+  const [showPathSection, setShowPathSection] = useState(false);
   
   const value = {
     heroYPosition,
@@ -17,6 +18,8 @@ export const AnimationProvider = ({ children }) => {
     setShowWebSection,
     showMobSection,
     setShowMobSection,
+    showPathSection,
+    setShowPathSection,
   };
   
   return (
