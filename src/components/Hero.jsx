@@ -8,7 +8,7 @@ const Hero = ({ scrollFunc }) => {
   const [clickedOnce, setClickedOnce] = useState(false);
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef(null);
-  const decayRef = useRef(null); // nuevo: controla la animación de retroceso
+  const decayRef = useRef(null);
   
   const handleScroll = () => {
     if (clickedOnce) return;
@@ -19,7 +19,6 @@ const Hero = ({ scrollFunc }) => {
   const startPress = () => {
     if (intervalRef.current || clickedOnce) return;
     
-    // cancelar cualquier retroceso activo
     if (decayRef.current) {
       clearInterval(decayRef.current);
       decayRef.current = null;
@@ -31,9 +30,10 @@ const Hero = ({ scrollFunc }) => {
           clearInterval(intervalRef.current);
           intervalRef.current = null;
           handleScroll();
+          
           return 100;
         }
-        return prev + 4; // velocidad del “cargado” (4 = 2.5 s aprox)
+        return prev + 4;
       });
     }, 100);
   };
@@ -44,7 +44,6 @@ const Hero = ({ scrollFunc }) => {
       intervalRef.current = null;
     }
     
-    // retroceso suave hacia 0
     if (!decayRef.current) {
       decayRef.current = setInterval(() => {
         setProgress((prev) => {
@@ -53,7 +52,7 @@ const Hero = ({ scrollFunc }) => {
             decayRef.current = null;
             return 0;
           }
-          return prev - 3; // velocidad del retroceso (ajustable)
+          return prev - 3;
         });
       }, 50);
     }
@@ -75,12 +74,11 @@ const Hero = ({ scrollFunc }) => {
         <h1 className={`${stylesVariable.heroHeadText} font-mono text-black`}>
           Need a developer?
         </h1>
-        <p className={`${stylesVariable.heroSubText} mt-2 text-white-200`}>
+        <p className={`${stylesVariable.heroSubText} mt-2 text-white-200`} style={{opacity: progress/100}}>
           Got it, I can help you with that.
         </p>
       </div>
       
-      {/* Botón con efecto de carga */}
       <div
         onMouseDown={startPress}
         onMouseUp={cancelPress}
@@ -88,10 +86,12 @@ const Hero = ({ scrollFunc }) => {
         onTouchStart={startPress}
         onTouchEnd={cancelPress}
         className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center"
-        style={{ zIndex: Z_INDEX_HERO }}
+        style={{ zIndex: Z_INDEX_HERO, flexDirection: 'column' }}
       >
+        <p className="text-xl sm:text-2xl bg-black mt-3 mb-1 font-light" style={{opacity: (100-progress)/100}}>
+          [Keep pressing]
+        </p>
         <div className="relative w-[35px] h-[64px] rounded-3xl border-2 border-secondary flex justify-center items-end p-2 overflow-hidden">
-          {/* Indicador de progreso */}
           <div
             className="absolute bottom-0 left-0 w-full bg-secondary/40"
             style={{
@@ -113,7 +113,6 @@ const Hero = ({ scrollFunc }) => {
         </div>
       </div>
       
-      {/* Video con opacidad dependiente del progreso */}
       <div
         className="flex items-center justify-center absolute"
         style={{
