@@ -5,7 +5,7 @@ import { stylesVariable } from '../menustyles'
 import backgroundVideo from '../assets/web_intro.mp4';
 import {useAnimationContext} from "../context/AnimationContext";
 
-const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
+const WebDevelopmentSection = ({externalRef, scrollFunc, scrollFuncExit}) => {
   const { showWebSection, setShowPathSection } = useAnimationContext();
   const [showText, setShowText] = useState(false)
   const [videoShouldLoop, setVideoShouldLoop] = useState(false)
@@ -144,7 +144,7 @@ const WebDevelopmentSection = ({externalRef, scrollFunc}) => {
             </motion.p>}
           </motion.div>
           
-          <div onClick={()=>{}} className='justify-center items-center flex z-20' style={{width: '10%', height: '10%'}}>
+          <div onClick={scrollFuncExit} className='justify-center items-center flex z-20' style={{width: '10%', height: '10%'}}>
             <div className='w-[25px] h-[25px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
               <motion.div
                 animate={{ y:[0, 5, 0] }}

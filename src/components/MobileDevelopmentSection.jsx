@@ -6,14 +6,12 @@ import backgroundVideo from '../assets/iphone17_2.mp4';
 import {useAnimationContext} from "../context/AnimationContext";
 import {DISPLAY_HEIGHT} from "../constants/Metrics";
 
-const MobileDevelopmentSection = ({externalRef, scrollFunc}) => {
-    const { introYPosition, setShowWebSection, showMobSection } = useAnimationContext();
+const MobileDevelopmentSection = ({externalRef, scrollFunc, scrollFuncExit}) => {
+    const isFirefox = typeof navigator !== "undefined" && /firefox/i.test(navigator.userAgent);
+    const videoSpeed = isFirefox ? 0.06 : 0.0128;
+    const { setShowWebSection, showMobSection } = useAnimationContext();
     const [showText, setShowText] = useState(false)
     const [clickedOnce, setClickedOnce] = useState(false);
-
-    useEffect(() => {
-      console.log("PositionY: ", introYPosition, " - Display height: ", DISPLAY_HEIGHT);
-    }, [introYPosition])
     
     const handleScroll = () => {
       if (clickedOnce) return;
@@ -58,7 +56,7 @@ const MobileDevelopmentSection = ({externalRef, scrollFunc}) => {
       if (showMobSection) {
         const step = () => {
           if (video.readyState >= 2) {
-            video.currentTime += directionRef.current * 0.0128 // ~30fps
+            video.currentTime += directionRef.current * videoSpeed
             if ((video.duration - video.currentTime) < 0.05 && contentIsHidden) {
               setContentIsHidden(false)
             }
@@ -148,8 +146,7 @@ const MobileDevelopmentSection = ({externalRef, scrollFunc}) => {
               </motion.p>}
             </motion.div>
             
-            {/* Botón de scroll */}
-            <div onClick={()=>{}} className='justify-center items-center flex z-20' style={{width: '10%', height: '10%'}}>
+            <div onClick={scrollFuncExit} className='justify-center items-center flex z-20' style={{width: '10%', height: '10%'}}>
               <div className='w-[25px] h-[25px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
                 <motion.div
                   animate={{ y:[0, 5, 0] }}

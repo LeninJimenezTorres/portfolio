@@ -11,11 +11,12 @@ import {
   Z_INDEX_HERO,
   Z_INDEX_WEB_SECTION,
   Z_INDEX_INTRO,
-  Z_INDEX_BASE, Z_INDEX_MY_PATH
+  Z_INDEX_BASE, Z_INDEX_MY_PATH, Z_INDEX_MOBILE_WORK
 } from "./constants/zIndexComponents";
 import Intro from "./components/Intro";
 import {DISPLAY_WIDTH} from "./constants/Metrics";
 import MyPath from "./components/MyPath";
+import MobileWork from "./components/MobileWork";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -29,6 +30,7 @@ function AppContent() {
   const upRef = useRef(null);
   
   const mobileDevRef = useRef(null);
+  const mobileWorkRef = useRef(null);
   const webDevRef = useRef(null);
   const myPathRef = useRef(null);
   
@@ -95,30 +97,46 @@ function AppContent() {
   };
   
   return (
-    <div className="App overflow-x-hidden overflow-hidden" style={{
-      overflow: 'hidden',
-      flex: 1,
-      width: '100%',
-    }}>
-      <div className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_HERO}} ref={topRef}>
+    <div
+      className="App w-full h-full flex"
+      style={{
+        flex: 1,
+        width: '100vw',
+        padding: 0,
+        margin: 0,
+      }}
+    >
+      <div className="bg-green-500 bg-cover bg-no-repeat bg-center w-full h-screen" style={{position: 'fixed', zIndex: Z_INDEX_HERO, width: "10vw"}} ref={topRef}>
         <Hero scrollFunc={() => scrollDown(topRef, 4, DISPLAY_HEIGHT)}/>
       </div>
       <div className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_INTRO}} ref={upRef}>
         <Intro scrollFunc={() => scrollUp(upRef, 4, DISPLAY_HEIGHT)}/>
       </div>
-      <div ref={mobileDevRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_MOB_SECTION}}>
-        <MobileDevelopmentSection externalRef={externalRef} scrollFunc={() => {
-          moveToWebDevSection(webDevRef, mobileDevRef)
-        }}/>
+      <div ref={mobileDevRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_MOB_SECTION, overflowX: 'hidden'}}>
+        <MobileDevelopmentSection
+          externalRef={externalRef}
+          scrollFunc={() => { moveToWebDevSection(webDevRef, mobileDevRef) }}
+          scrollFuncExit={() => {
+            if (webDevRef.current) {
+              webDevRef.current.style.display = "none";
+            }
+            scrollUp(mobileDevRef, 4, DISPLAY_HEIGHT)
+          }}
+        />
       </div>
       <div ref={webDevRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_WEB_SECTION}}>
-        <WebDevelopmentSection externalRef={externalRef} scrollFunc={() => {
-          moveToWebDevSection(mobileDevRef, webDevRef)
-        }}/>
+        <WebDevelopmentSection
+          externalRef={externalRef}
+          scrollFunc={() => { moveToWebDevSection(mobileDevRef, webDevRef)}}
+          scrollFuncExit={() => scrollUp(webDevRef, 4, DISPLAY_HEIGHT)}
+        />
       </div>
-      <div ref={myPathRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_MY_PATH, top: DISPLAY_HEIGHT}}>
-        <MyPath scrollFunc={() => scrollUp(upRef, 4, DISPLAY_HEIGHT)}/>
+      <div ref={mobileWorkRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'relative', zIndex: Z_INDEX_MOBILE_WORK}}>
+        <MobileWork scrollFunc={() => scrollUp(upRef, 4, DISPLAY_HEIGHT)}/>
       </div>
+      {/*<div ref={myPathRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_MY_PATH, top: DISPLAY_HEIGHT}}>*/}
+      {/*  <MyPath scrollFunc={() => scrollUp(upRef, 4, DISPLAY_HEIGHT)}/>*/}
+      {/*</div>*/}
       <div className="w-screen h-screen bg-black" style={{zIndex: Z_INDEX_BASE, position: "absolute", width: DISPLAY_WIDTH, height: DISPLAY_HEIGHT}}></div>
     </div>
   );

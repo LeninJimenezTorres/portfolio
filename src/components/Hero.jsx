@@ -66,7 +66,7 @@ const Hero = ({ scrollFunc }) => {
   }, []);
   
   return (
-    <section className="relative w-full h-screen mx-auto bg-white">
+    <section className="absolute w-screen h-screen mx-auto bg-white">
       <div
         className={`${stylesVariable.paddingX} absolute inset-0 justify-center max-w-7cl mx-auto flex flex-col items-center gap-5`}
         style={{ zIndex: Z_INDEX_HERO }}
