@@ -1,10 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react'
 import { motion } from 'framer-motion'
 
-import { stylesVariable } from '../menustyles'
-import backgroundVideo from '../assets/iphone17_2.mp4';
-import {useAnimationContext} from "../context/AnimationContext";
-import {DISPLAY_HEIGHT} from "../constants/Metrics";
+import { stylesVariable } from '../../menustyles'
+import backgroundVideo from '../../assets/iphone17_2.mp4';
+import {useAnimationContext} from "../../context/AnimationContext";
+import {DISPLAY_HEIGHT} from "../../constants/Metrics";
+import CircleSlider from "./components/CircleSlider";
 
 const MobileDevelopmentSection = ({externalRef, scrollFunc, scrollFuncExit}) => {
     const isFirefox = typeof navigator !== "undefined" && /firefox/i.test(navigator.userAgent);
@@ -147,31 +148,13 @@ const MobileDevelopmentSection = ({externalRef, scrollFunc, scrollFuncExit}) => 
             </motion.div>
             
             <div onClick={scrollFuncExit} className='justify-center items-center flex z-20' style={{width: '10%', height: '10%'}}>
-              <div className='w-[25px] h-[25px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
-                <motion.div
-                  animate={{ y:[0, 5, 0] }}
-                  transition={{ duration:1.5, repeat: Infinity, repeatType: "loop" }}
-                  className='w-3 h-1 rounded-full bg-secondary mb-1'
-                />
-              </div>
+              <CircleSlider />
             </div>
           </motion.div>
           
           <div onClick={handleScroll} className='mb-100 bottom-0 justify-center items-center flex z-20' style={{width: '5%', height: '100vh', visibility: contentIsHidden ? 'hidden' : 'visible'}}>
-                <div className='w-[25px] h-[25px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
-                    <motion.dev
-                        animate={{
-                            y:[0, 5, 0]
-                        }}
-                        transition={{
-                            duration:1.5,
-                            repeat: Infinity,
-                            repeatType: "loop"
-                        }}
-                        className='w-3 h-1 rounded-full bg-secondary mb-1'
-                    />
-                </div>
-            </div>
+            <CircleSlider />
+          </div>
         </div>
     </div>
   )

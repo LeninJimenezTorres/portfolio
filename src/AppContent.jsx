@@ -5,7 +5,7 @@ import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import {useAnimationContext} from "./context/AnimationContext";
-import WebDevelopmentSection from "./components/WebDevelopmentSection";
+import WebDevelopmentSection from "./components/developmentSections/WebDevelopmentSection";
 import {
   Z_INDEX_MOB_SECTION,
   Z_INDEX_HERO,
@@ -13,7 +13,7 @@ import {
   Z_INDEX_INTRO,
   Z_INDEX_BASE, Z_INDEX_MY_PATH, Z_INDEX_MOBILE_WORK
 } from "./constants/zIndexComponents";
-import Intro from "./components/Intro";
+import Intro from "./components/introduction/Intro";
 import {DISPLAY_WIDTH} from "./constants/Metrics";
 import MyPath from "./components/MyPath";
 import MobileWork from "./components/MobileWork";
@@ -24,7 +24,6 @@ const DISPLAY_HEIGHT = window.innerHeight;
 
 function AppContent() {
   const externalRef = useRef(null);
-  const areasRef = useRef(null);
   const techRef = useRef(null);
   const topRef = useRef(null);
   const upRef = useRef(null);
@@ -32,7 +31,6 @@ function AppContent() {
   const mobileDevRef = useRef(null);
   const mobileWorkRef = useRef(null);
   const webDevRef = useRef(null);
-  const myPathRef = useRef(null);
   
   const { setHeroYPosition } = useAnimationContext();
   const { setIntroYPosition } = useAnimationContext();
@@ -134,9 +132,6 @@ function AppContent() {
       <div ref={mobileWorkRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'relative', zIndex: Z_INDEX_MOBILE_WORK}}>
         <MobileWork scrollFunc={() => scrollUp(upRef, 4, DISPLAY_HEIGHT)}/>
       </div>
-      {/*<div ref={myPathRef} className="bg-white bg-cover bg-no-repeat bg-center w-screen h-screen" style={{position: 'fixed', zIndex: Z_INDEX_MY_PATH, top: DISPLAY_HEIGHT}}>*/}
-      {/*  <MyPath scrollFunc={() => scrollUp(upRef, 4, DISPLAY_HEIGHT)}/>*/}
-      {/*</div>*/}
       <div className="w-screen h-screen bg-black" style={{zIndex: Z_INDEX_BASE, position: "absolute", width: DISPLAY_WIDTH, height: DISPLAY_HEIGHT}}></div>
     </div>
   );

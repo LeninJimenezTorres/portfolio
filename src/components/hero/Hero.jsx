@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { stylesVariable } from '../menustyles';
-import backgroundVideo from '../assets/start.mp4';
-import { Z_INDEX_HERO, Z_INDEX_INTRO } from '../constants/zIndexComponents';
+import { stylesVariable } from '../../menustyles';
+import backgroundVideo from '../../assets/start.mp4';
+import { Z_INDEX_HERO, Z_INDEX_INTRO } from '../../constants/zIndexComponents';
+import SliderButton from "./components/SliderButton";
+import VideoHero from "./components/VideoHero";
 
 const Hero = ({ scrollFunc }) => {
   const [clickedOnce, setClickedOnce] = useState(false);
@@ -91,48 +92,9 @@ const Hero = ({ scrollFunc }) => {
         <p className="text-xl sm:text-2xl bg-black mt-3 mb-1 font-light" style={{opacity: (100-progress)/100}}>
           [Keep pressing]
         </p>
-        <div className="relative w-[35px] h-[64px] rounded-3xl border-2 border-secondary flex justify-center items-end p-2 overflow-hidden">
-          <div
-            className="absolute bottom-0 left-0 w-full bg-secondary/40"
-            style={{
-              height: `${progress}%`,
-              transition: 'height 0.1s linear',
-            }}
-          />
-          <motion.div
-            animate={{
-              y: [0, 24, 0],
-            }}
-            transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              repeatType: 'loop',
-            }}
-            className="w-3 h-3 rounded-full bg-secondary mb-1 relative z-10"
-          />
-        </div>
+        <SliderButton progress={progress} />
       </div>
-      
-      <div
-        className="flex items-center justify-center absolute"
-        style={{
-          width: '100vw',
-          height: '100vh',
-          position: 'absolute',
-          zIndex: Z_INDEX_INTRO,
-          opacity: progress / 100,
-          transition: 'opacity 0.2s ease-out',
-        }}
-      >
-        <video
-          muted
-          autoPlay
-          loop={true}
-          className="inset-0 w-full h-full object-cover absolute"
-        >
-          <source src={backgroundVideo} type="video/mp4" />
-        </video>
-      </div>
+      <VideoHero progress={progress}/>
     </section>
   );
 };

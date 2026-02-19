@@ -1,9 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react'
 import { motion } from 'framer-motion'
 
-import { stylesVariable } from '../menustyles'
-import backgroundVideo from '../assets/web_intro.mp4';
-import {useAnimationContext} from "../context/AnimationContext";
+import { stylesVariable } from '../../menustyles'
+import backgroundVideo from '../../assets/web_intro.mp4';
+import {useAnimationContext} from "../../context/AnimationContext";
+import CircleSlider from "./components/CircleSlider";
 
 const WebDevelopmentSection = ({externalRef, scrollFunc, scrollFuncExit}) => {
   const { showWebSection, setShowPathSection } = useAnimationContext();
@@ -60,19 +61,7 @@ const WebDevelopmentSection = ({externalRef, scrollFunc, scrollFuncExit}) => {
     <div ref={externalRef} className='h-screen w-full justify-center items-center content-center align-middle mt-0 mb-0 flex flex-col  overflow-hidden' style={{background:'black'}}>
       <div ref={externalRef} className='w-full justify-center items-center content-center align-middle mt-0 mb-0 flex flex-row overflow-hidden'  style={{height:'90%'}}>
         <div onClick={handleScroll} className='mb-100 bottom-0 justify-center items-center flex absolute z-20 left-0 overflow-hidden' style={{width: '10vw', height: '100vh', visibility: contentIsHidden ? 'hidden' : 'visible'}}>
-          <div className='w-[25px] h-[25px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
-            <motion.dev
-              animate={{
-                y:[0, 5, 0]
-              }}
-              transition={{
-                duration:1.5,
-                repeat: Infinity,
-                repeatType: "loop"
-              }}
-              className='w-3 h-1 rounded-full bg-secondary mb-1'
-            />
-          </div>
+          <CircleSlider />
         </div>
         <div className='flex items-center justify-center' style={{width: '40%', height: '100vh'}} >
           <video
@@ -145,13 +134,7 @@ const WebDevelopmentSection = ({externalRef, scrollFunc, scrollFuncExit}) => {
           </motion.div>
           
           <div onClick={scrollFuncExit} className='justify-center items-center flex z-20' style={{width: '10%', height: '10%'}}>
-            <div className='w-[25px] h-[25px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2'>
-              <motion.div
-                animate={{ y:[0, 5, 0] }}
-                transition={{ duration:1.5, repeat: Infinity, repeatType: "loop" }}
-                className='w-3 h-1 rounded-full bg-secondary mb-1'
-              />
-            </div>
+            <CircleSlider />
           </div>
         </motion.div>
       </div>

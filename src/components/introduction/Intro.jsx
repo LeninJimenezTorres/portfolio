@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-import backgroundVideo from '../assets/intro_small.mp4';
-import {useAnimationContext} from "../context/AnimationContext";
+import backgroundVideo from '../../assets/intro_small.mp4';
+import {useAnimationContext} from "../../context/AnimationContext";
+import VideoIntro from "./components/VideoIntro";
 
 const Intro = ({scrollFunc }) => {
   const [clickedOnce, setClickedOnce] = useState(false);
@@ -17,15 +18,7 @@ const Intro = ({scrollFunc }) => {
   
   return (
     <div className='relative flex items-center justify-center w-screen h-screen'>
-      <video
-        muted
-        autoPlay
-        loop
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src={backgroundVideo} type="video/mp4" />
-      </video>
-      
+      <VideoIntro />
       <div
         className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white text-center"
         style={{ background: "rgba(0,0,0,0.0)" }}
